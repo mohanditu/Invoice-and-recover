@@ -28,7 +28,7 @@ class Contact {
     }
     selectContactType() {
         this.elements.contactTypeDropdown().each(($el, index, $list) => {
-            if ($el.text() == "Supplier") {
+            if ($el.text() == "Customer") {
                 cy.wrap($el).click();
             }
         });
@@ -36,8 +36,8 @@ class Contact {
     entercontactdetails() {
         this.elements.companyName().type("Edios Pvt Ltd");
         this.elements.ContactName().type("Mohan Singh");
-        this.elements.ContactMobileNo().type("9865321245");
-        this.elements.ContactEmail().type("test@yopmail.com");
+        this.elements.ContactMobileNo().type("9867321245");
+        this.elements.ContactEmail().type("test1@yopmail.com");
     }
     enterStreetAddress() {
         this.elements.StreetAddress().type("123");

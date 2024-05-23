@@ -7,12 +7,12 @@
   },
   "author": "mohan",
   "license": "ISC",
-  "description": "",
   "devDependencies": {
     "cypress": "^13.8.1",
     "cypress-xpath": "^2.0.1"
   },
   "dependencies": {
     "xpath": "^0.0.34"
-  }
+  },
+  "description": ""
 }

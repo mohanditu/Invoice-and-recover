@@ -5,7 +5,7 @@ describe("Validate Invoice and Recover Appliaction", () => {
         cy.fixture('example.json').then((data) => {
             webdata = data;
         });
-        cy.viewport(1800, 800)
+        cy.viewport(1500, 800)
         cy.visit("http://66.133.97.28:8081/login")
         cy.xpath("//input[@id='mui-1']").type("testinginvoice@yopmail.com");
         cy.xpath("//input[@id='outlined-adornment-password']").type("22222222")
@@ -39,6 +39,13 @@ describe("Validate Invoice and Recover Appliaction", () => {
         // cy.get(':nth-child(4) > .Toastify__toast-container').should("be.visible").should("have.text","Added successfully.")
         cy.xpath("//li[2]//div[1]//div[2]//span[1]//div[1]").click();
         cy.xpath("//div[contains(text(),'Categories')]").scrollIntoView().should("be.visible").click();
+        cy.xpath("//button[normalize-space()='Add New']").click();
+        // cy.wait(5000);
+        cy.xpath("//input[@id='mui-10']").should("be.visible").type("Electronic2");
+        cy.xpath("//input[@id='mui-11']").type("ERC2");
+        cy.xpath("//button[normalize-space()='Save']").click();
+        // cy.get("cy.get(':nth-child(4) > .Toastify__toast-container").should("be.visible").should("have.text","Added successfully");
+
 
 
 

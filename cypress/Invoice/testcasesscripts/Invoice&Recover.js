@@ -16,7 +16,7 @@ describe("Validate Invoice and Recover Appliaction", () => {
             LoginCheck.checkLogoutBtn();
         })
         it('Validate Add New Contact', () => {
-            cy.viewport(1800, 800)
+            cy.viewport(1700, 800)
             LoginCheck.EnterCredentials();
             LoginCheck.checkRememberMeToggle();
             LoginCheck.clickLoginBtn();
@@ -28,7 +28,7 @@ describe("Validate Invoice and Recover Appliaction", () => {
             Contact.enterStreetAddress();
             cy.wait(3000)
             Contact.selectStreetAddressByList();
-            cy.wait(5000)
+            cy.wait(2000)
             Contact.clickSaveBtn();
             cy.wait(1000)
             Contact.checkContactAdd();
