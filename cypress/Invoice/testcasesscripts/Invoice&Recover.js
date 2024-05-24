@@ -76,6 +76,8 @@ describe("Validate Invoice and Recover Appliaction", () => {
             Signup.enterSignupDetails();
             Signup.selectCountryCode();
             Signup.clickSaveBtn();
+            Signup.entergriddetails();
+            Signup.enterPasswordDetails();
         })
     })
 
