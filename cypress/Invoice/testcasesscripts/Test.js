@@ -41,8 +41,8 @@ describe("Validate Invoice and Recover Appliaction", () => {
         cy.xpath("//div[contains(text(),'Categories')]").scrollIntoView().should("be.visible").click();
         cy.xpath("//button[normalize-space()='Add New']").click();
         // cy.wait(5000);
-        cy.xpath("//input[@id='mui-10']").should("be.visible").type("Electronic2");
-        cy.xpath("//input[@id='mui-11']").type("ERC2");
+        cy.xpath("//input[@id='mui-10']").should("be.visible").type("Electronic3");
+        cy.xpath("//input[@id='mui-11']").type("ERC3");
         cy.xpath("//button[normalize-space()='Save']").click();
         // cy.get("cy.get(':nth-child(4) > .Toastify__toast-container").should("be.visible").should("have.text","Added successfully");
 
