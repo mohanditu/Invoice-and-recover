@@ -47,6 +47,7 @@ describe("Validate Invoice and Recover Appliaction", () => {
             cy.wait(3000)
             Category.entercontactdetails();
             Category.clickSaveBtn();
+            Category.checkCategoryAdd();
         })
         it('Valdate Add Category Functionality', () => {
             cy.viewport(1200, 800);
@@ -64,7 +65,8 @@ describe("Validate Invoice and Recover Appliaction", () => {
             cy.wait(3000); 
             Items.selectGSTDropwdown();
             cy.wait(2000)
-            Items.clickSaveBtn();        
+            Items.clickSaveBtn();   
+            Items.checkItemAdd();     
             
         })
     })

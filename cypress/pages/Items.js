@@ -13,7 +13,8 @@ class Items {
         DefaultQty: () => cy.xpath("/html[1]/body[1]/div[1]/div[3]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[9]/div[1]/div[1]/input[1]"),
         GST: () => cy.xpath("//body/div[@id='root']/div[3]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[10]/div[1]/div[1]"),
         GSTList: () => cy.xpath("//body/div[@id='menu-']/div[3]/ul[1]/li[1]"),   
-        SaveBtn: () =>  cy.xpath("//button[normalize-space()='Save']") 
+        SaveBtn: () =>  cy.xpath("//button[normalize-space()='Save']"),
+        toastMessage: ()=> cy.get(':nth-child(4) > .Toastify__toast-container')
     }
     ScrollBottom() {
 
@@ -50,6 +51,9 @@ class Items {
     }
     clickSaveBtn(){
         this.elements.SaveBtn().click();
+    }
+    checkItemAdd(){
+        this.elements.toastMessage().should("have.text", "Added successfully.");
     }
 }
 module.exports = new Items()
