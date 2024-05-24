@@ -7,11 +7,12 @@ class Items {
         CategoryDropdownList: () => cy.xpath("//li[@id='categoryName-select-option-0']"),
         ItemName:() => cy.xpath("/html[1]/body[1]/div[1]/div[3]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[1]/input[1]"),
         ItemCode: () => cy.xpath("/html[1]/body[1]/div[1]/div[3]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[4]/div[1]/div[1]/input[1]"),
-        MeasurementDrpdwn: () => cy.xpath(""),
-        MeasurementDrpdwnlist: () => cy.xpath(""),
+        MeasurementDrpdwn: () => cy.xpath("//body/div[@id='root']/div[3]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[7]/div[1]/div[1]"),
+        MeasurementDrpdwnlist: () => cy.xpath("//body/div[@id='menu-']/div[3]/ul[1]/li[1]"),
         UnitPrice: () => cy.xpath("/html[1]/body[1]/div[1]/div[3]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[8]/div[1]/div[1]/input[1]"),
         DefaultQty: () => cy.xpath("/html[1]/body[1]/div[1]/div[3]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[9]/div[1]/div[1]/input[1]"),
-        GST: () => cy.xpath("//div[10]//div[1]//div[1]//div[1]//span[1]"),            
+        GST: () => cy.xpath("//body/div[@id='root']/div[3]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[10]/div[1]/div[1]"),
+        GSTList: () => cy.xpath("//body/div[@id='menu-']/div[3]/ul[1]/li[1]"),   
         SaveBtn: () =>  cy.xpath("//button[normalize-space()='Save']") 
     }
     ScrollBottom() {
@@ -29,6 +30,7 @@ class Items {
     }
     selectCategoryDropwdown() {
         this.elements.CategoryDropdown().click();
+        cy.wait(3000)
         this.elements.CategoryDropdownList().should("be.visible").click();      
     }
     enterDetails() {
@@ -38,12 +40,16 @@ class Items {
         cy.wait(3000)
         this.elements.DefaultQty().type("4");
     }
-    selectGstDropwdown() {
-        this.elements.CategoryDropdown().click();
-        this.elements.CategoryDropdownList().should("be.visible").click();      
+    selectMeasurementDropwdown() {
+        this.elements.MeasurementDrpdwn().should("be.visible").click();
+        this.elements.MeasurementDrpdwnlist().should("be.visible").click();      
     }
-    // clickSaveBtn(){
-    //     this.elements.SaveBtn().click();
-    // }
+    selectGSTDropwdown() {
+        this.elements.GST().should("be.visible").click();
+        this.elements.GSTList().should("be.visible").click();      
+    }
+    clickSaveBtn(){
+        this.elements.SaveBtn().click();
+    }
 }
 module.exports = new Items()

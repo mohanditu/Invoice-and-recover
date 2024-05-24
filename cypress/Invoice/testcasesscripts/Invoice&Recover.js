@@ -57,10 +57,15 @@ describe("Validate Invoice and Recover Appliaction", () => {
             Items.selectSubMenu();
             Items.clickAddNewBtn();
             cy.wait(3000)
-            Items.enterDetails();
             Items.selectCategoryDropwdown();
+            Items.enterDetails();            
+            cy.wait(3000);
+            Items.selectMeasurementDropwdown();   
+            cy.wait(3000); 
+            Items.selectGSTDropwdown();
+            cy.wait(2000)
+            Items.clickSaveBtn();        
             
-            // Category.clickSaveBtn();
         })
     })
 

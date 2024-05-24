@@ -8,7 +8,7 @@
   "author": "mohan",
   "license": "ISC",
   "devDependencies": {
-    "cypress": "^13.8.1",
+    "cypress": "^13.10.0",
     "cypress-xpath": "^2.0.1"
   },
   "dependencies": {
