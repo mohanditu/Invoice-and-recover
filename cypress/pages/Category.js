@@ -10,7 +10,7 @@ class Category {
     }
     ScrollBottom() {
 
-        this.elements.ScrollBottom()
+        this.elements.ScrollBottom();
     }
     selectMenu() {
         this.elements.SettingsMenu().click();
@@ -22,8 +22,8 @@ class Category {
         this.elements.AddNewbtn().click();
     }
     entercontactdetails() {
-        this.elements.CategoryName().type("Wearable2");
-        this.elements.CategoryCode().type("ERCT2");
+        this.elements.CategoryName().type("Wearable");
+        this.elements.CategoryCode().type("WC");
       
     }
     clickSaveBtn(){

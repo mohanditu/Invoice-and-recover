@@ -36,7 +36,7 @@ class Items {
     }
     enterDetails() {
         this.elements.ItemName().type("Laptop");
-        this.elements.ItemCode().type("rtg");
+        this.elements.ItemCode().type("LAP");
         this.elements.UnitPrice().type("1000");
         cy.wait(3000)
         this.elements.DefaultQty().type("4");

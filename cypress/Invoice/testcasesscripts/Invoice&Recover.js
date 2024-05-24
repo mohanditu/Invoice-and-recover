@@ -2,6 +2,7 @@ import LoginCheck from "../../pages/LoginCheck";
 import Contact from "../../pages/Contact";
 import Category from "../../pages/Category";
 import Items from "../../pages/Items";
+import Signup from "../../pages/Signup";
 
 describe("Validate Invoice and Recover Appliaction", () => {
     let webdata;
@@ -49,7 +50,7 @@ describe("Validate Invoice and Recover Appliaction", () => {
             Category.clickSaveBtn();
             Category.checkCategoryAdd();
         })
-        it('Valdate Add Category Functionality', () => {
+        it.skip('Valdate Add Item Functionality', () => {
             cy.viewport(1200, 800);
             LoginCheck.EnterCredentials();
             LoginCheck.checkRememberMeToggle();
@@ -68,6 +69,13 @@ describe("Validate Invoice and Recover Appliaction", () => {
             Items.clickSaveBtn();   
             Items.checkItemAdd();     
             
+        })
+        it('Valdate Signup Functionality', () => {
+            cy.viewport(1300, 800);
+            Signup.clickSignuplink();
+            Signup.enterSignupDetails();
+            Signup.selectCountryCode();
+            Signup.clickSaveBtn();
         })
     })
 

@@ -37,7 +37,7 @@ class Contact {
         this.elements.companyName().type("Edios Pvt Ltd");
         this.elements.ContactName().type("Mohan Singh");
         this.elements.ContactMobileNo().type("9867321245");
-        this.elements.ContactEmail().type("test1@yopmail.com");
+        this.elements.ContactEmail().type("mohan.edios@yopmail.com");
     }
     enterStreetAddress() {
         this.elements.StreetAddress().type("123");

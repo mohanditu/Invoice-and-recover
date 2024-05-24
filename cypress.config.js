@@ -7,5 +7,6 @@ module.exports = defineConfig({
       
     },
     specPattern: "cypress/Invoice/testcasesscripts/*.js"
-  },  
+  }, 
+	projectId: "kz3844",  
 });
