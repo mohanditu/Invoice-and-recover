@@ -76,8 +76,11 @@ describe("Validate Invoice and Recover Appliaction", () => {
             Signup.enterSignupDetails();
             Signup.selectCountryCode();
             Signup.clickSaveBtn();
+            cy.wait(2000)
             Signup.entergriddetails();
             Signup.enterPasswordDetails();
+            Signup.enterBusinessDetails();
+            Signup.checktoastMessage();
         })
     })
 

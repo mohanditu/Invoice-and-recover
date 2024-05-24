@@ -24,7 +24,18 @@ class Signup {
         Submitbtn: () => cy.xpath("//body/div[@id='root']/div[1]/div[3]/div[1]/div[1]/div[1]/div[2]/div[3]/div[1]/div[1]/button[1]"),
         NewPassword: () => cy.xpath("/html[1]/body[1]/div[1]/div[1]/div[3]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/input[1]"),
         ConfirmPassword: () => cy.xpath("/html[1]/body[1]/div[1]/div[1]/div[3]/div[1]/div[1]/div[1]/div[2]/div[1]/div[2]/div[1]/div[1]/input[1]"),
-        SaveBtn2: () => cy.xpath("/html[1]/body[1]/div[1]/div[1]/div[3]/div[1]/div[1]/div[1]/div[3]/div[1]/button[1]")
+        SaveBtn2: () => cy.xpath("/html[1]/body[1]/div[1]/div[1]/div[3]/div[1]/div[1]/div[1]/div[3]/div[1]/button[1]"),
+        BusinessName: () => cy.xpath("/html[1]/body[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/input[1]"),
+        AbnNumber: () => cy.xpath("/html[1]/body[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]/div[1]/div[1]/div[2]/div[2]/div[1]/div[1]/div[1]/input[1]"),
+        OrgType: () => cy.xpath("/html[1]/body[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]/div[1]/div[1]/div[2]/div[3]/div[1]/div[1]"),
+        OrgTypeList: () => cy.xpath("/html[1]/body[1]/div[3]/div[3]/ul[1]/li[1]"),
+        IndType: () => cy.xpath("/html[1]/body[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]/div[1]/div[1]/div[2]/div[4]/div[1]/div[1]"),
+        IndTypeList: () => cy.xpath("/html[1]/body[1]/div[3]/div[3]/ul[1]/li[1]"),
+        StreetAddress: () => cy.xpath("/html[1]/body[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]/div[1]/div[1]/div[2]/div[5]/div[1]/div[1]/input[1]"),
+        StreetAddressList: () => cy.get(".pac-container.pac-logo.hdpi"),
+        Termsandconcheckbox: () => cy.xpath("/html[1]/body[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]/div[1]/div[1]/div[2]/div[10]/span[1]/input[1]"),
+        SignUpBtn: () => cy.xpath("/html[1]/body[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]/div[1]/div[1]/div[3]/div[1]/div[1]/button[1]"),
+        ToastMessage: () => cy.get('.Toastify__toast-body')
     }
     ScrollBottom() {
 
@@ -37,7 +48,7 @@ class Signup {
     enterSignupDetails() {
         this.elements.FirstName().type("Logitech");
         this.elements.LastName().type("Singh");
-        this.elements.EmailAddress().type("Logitech1@yopmail.com");
+        this.elements.EmailAddress().type("Logitech5@yopmail.com");
         
     }
     selectCountryCode() {
@@ -45,7 +56,7 @@ class Signup {
         cy.wait(1000)
         this.elements.IndiaCode().click();
         cy.wait(1000)
-        this.elements.PhoneNumber().type("8956241245");
+        this.elements.PhoneNumber().type("8979095690");
     }
     clickSaveBtn() {
         this.elements.saveBtn().click();
@@ -69,6 +80,29 @@ class Signup {
         this.elements.NewPassword().type("22222222");
         this.elements.ConfirmPassword().type("22222222");
         this.elements.SaveBtn2().type("22222222");
+    }
+    enterBusinessDetails() {
+        this.elements.BusinessName().type("ABC Enterprise");
+        this.elements.AbnNumber().type("12345678232");
+        this.elements.OrgType().click();
+        cy.wait(1000)
+        this.elements.OrgTypeList().should("be.visible").click();
+        this.elements.IndType().click();
+        cy.wait(1000)
+        this.elements.IndTypeList().should("be.visible").click();
+        this.elements.StreetAddress().click().type("123");
+        cy.wait(3000);
+        this.elements.StreetAddressList().should("be.visible").each(($el,index,$list) => {
+            if(true){
+                cy.wrap($el).click();
+            }
+
+        });
+        this.elements.Termsandconcheckbox().check();
+        this.elements.SignUpBtn().click();
+    }
+    checktoastMessage() {
+        this.elements.ToastMessage().should("have.text","Saved successfully.");
     }
     
 }
