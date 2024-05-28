@@ -5,7 +5,8 @@ class LoginCheck {
         Checkbox: () => cy.xpath("//input[@type='checkbox']"),
         LoginBtn: () => cy.xpath("//button[normalize-space()='Login']"),
         AccCircle: () => cy.xpath("//span[contains(text(),'account_circle')]"),
-        LogoutBtn: () => cy.xpath("//body/div[@id='basic-menu']/div[3]/ul[1]/li[1]")
+        LogoutBtn: () => cy.xpath("//body/div[@id='basic-menu']/div[3]/ul[1]/li[1]"),
+        ThemeBtn: () => cy.xpath("/html[1]/body[1]/div[2]/div[3]/div[1]/div[1]/button[1]")
     }
     ScrollBottom() {
 
@@ -27,6 +28,9 @@ class LoginCheck {
     }
     checkLogoutBtn(){
         this.elements.LogoutBtn().should("have.text", "Logout");
+    }
+    clickThemeBtn() {
+        this.elements.ThemeBtn().click();
     }
 
     // checkHeaderText(matchText1) {

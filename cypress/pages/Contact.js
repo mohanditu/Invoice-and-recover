@@ -27,17 +27,18 @@ class Contact {
         this.elements.ContactType().click();
     }
     selectContactType() {
+        cy.wait(3000)
         this.elements.contactTypeDropdown().each(($el, index, $list) => {
-            if ($el.text() == "Customer") {
+            if ($el.text() == "Supplier") {
                 cy.wrap($el).click();
             }
         });
     }
     entercontactdetails() {
         this.elements.companyName().type("Edios Pvt Ltd");
-        this.elements.ContactName().type("Mohan Singh");
-        this.elements.ContactMobileNo().type("9867321245");
-        this.elements.ContactEmail().type("mohan.edios@yopmail.com");
+        this.elements.ContactName().type("Sohan Singh");
+        this.elements.ContactMobileNo().type("7409684233");
+        this.elements.ContactEmail().type("mohan.edios1@yopmail.com");
     }
     enterStreetAddress() {
         this.elements.StreetAddress().type("123");

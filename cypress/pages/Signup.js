@@ -32,7 +32,7 @@ class Signup {
         IndType: () => cy.xpath("/html[1]/body[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]/div[1]/div[1]/div[2]/div[4]/div[1]/div[1]"),
         IndTypeList: () => cy.xpath("/html[1]/body[1]/div[3]/div[3]/ul[1]/li[1]"),
         StreetAddress: () => cy.xpath("/html[1]/body[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]/div[1]/div[1]/div[2]/div[5]/div[1]/div[1]/input[1]"),
-        StreetAddressList: () => cy.get(".pac-container.pac-logo.hdpi"),
+        StreetAddressList: () => cy.get(".pac-container"),
         Termsandconcheckbox: () => cy.xpath("/html[1]/body[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]/div[1]/div[1]/div[2]/div[10]/span[1]/input[1]"),
         SignUpBtn: () => cy.xpath("/html[1]/body[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]/div[1]/div[1]/div[3]/div[1]/div[1]/button[1]"),
         ToastMessage: () => cy.get('.Toastify__toast-body')
@@ -94,7 +94,7 @@ class Signup {
         cy.wait(3000);
         this.elements.StreetAddressList().should("be.visible").each(($el,index,$list) => {
             if(true){
-                cy.wrap($el).click();
+                cy.wrap($el).should("be.visible").click();
             }
 
         });

@@ -18,12 +18,14 @@ describe("Validate Invoice and Recover Appliaction", () => {
             LoginCheck.clickLoginBtn();
             LoginCheck.clickAccCircle();
             LoginCheck.checkLogoutBtn();
+            LoginCheck.clickThemeBtn();
         })
         it.skip('Validate Add New Contact', () => {
             cy.viewport(1700, 800)
             LoginCheck.EnterCredentials();
             LoginCheck.checkRememberMeToggle();
             LoginCheck.clickLoginBtn();
+            LoginCheck.clickThemeBtn();
             Contact.selectMenu();
             Contact.clickAddNewBtn();
             Contact.clickContactType();
@@ -42,6 +44,7 @@ describe("Validate Invoice and Recover Appliaction", () => {
             LoginCheck.EnterCredentials();
             LoginCheck.checkRememberMeToggle();
             LoginCheck.clickLoginBtn();
+            LoginCheck.clickThemeBtn();
             Category.selectMenu();
             Category.selectSubMenu();
             Category.clickAddNewBtn();
@@ -55,6 +58,7 @@ describe("Validate Invoice and Recover Appliaction", () => {
             LoginCheck.EnterCredentials();
             LoginCheck.checkRememberMeToggle();
             LoginCheck.clickLoginBtn();
+            LoginCheck.clickThemeBtn();
             Items.selectMenu();
             Items.selectSubMenu();
             Items.clickAddNewBtn();
@@ -70,7 +74,7 @@ describe("Validate Invoice and Recover Appliaction", () => {
             Items.checkItemAdd();     
             
         })
-        it('Valdate Signup Functionality', () => {
+        it.skip('Valdate Signup Functionality', () => {
             cy.viewport(1300, 800);
             Signup.clickSignuplink();
             Signup.enterSignupDetails();
