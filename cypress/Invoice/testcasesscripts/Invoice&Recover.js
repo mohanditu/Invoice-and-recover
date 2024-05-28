@@ -17,7 +17,7 @@ describe("Validate Invoice and Recover Appliaction", () => {
             cy.visit('http://66.133.97.28:8081/login')
         })
 
-        it('Validate Login Functionality', () => {
+        it.skip('Validate Login Functionality', () => {
             cy.viewport(1800, 800)
             LoginCheck.EnterCredentials(webdata.username,webdata.Password);
             LoginCheck.checkRememberMeToggle();
@@ -27,16 +27,18 @@ describe("Validate Invoice and Recover Appliaction", () => {
             LoginCheck.checkLogoutBtn();
             
         })
-        it.skip('Validate Add New Contact', () => {
+        it('Validate Add New Contact', () => {
             cy.viewport(1700, 800)
-            LoginCheck.EnterCredentials();
+            LoginCheck.EnterCredentials(webdata.username,webdata.Password);
             LoginCheck.checkRememberMeToggle();
             LoginCheck.clickLoginBtn();
             LoginCheck.clickThemeBtn();
             Contact.selectMenu();
             Contact.clickAddNewBtn();
             Contact.clickContactType();
+            cy.wait(3000)
             Contact.selectContactType();
+            cy.wait(1000)
             Contact.entercontactdetails();
             Contact.enterStreetAddress();
             cy.wait(3000)
@@ -48,7 +50,7 @@ describe("Validate Invoice and Recover Appliaction", () => {
         })
         it.skip('Valdate Add Category Functionality', () => {
             cy.viewport(1200, 800);
-            LoginCheck.EnterCredentials();
+            LoginCheck.EnterCredentials(webdata.username,webdata.Password);
             LoginCheck.checkRememberMeToggle();
             LoginCheck.clickLoginBtn();
             LoginCheck.clickThemeBtn();
@@ -62,7 +64,7 @@ describe("Validate Invoice and Recover Appliaction", () => {
         })
         it.skip('Valdate Add Item Functionality', () => {
             cy.viewport(1200, 800);
-            LoginCheck.EnterCredentials();
+            LoginCheck.EnterCredentials(webdata.username,webdata.Password);
             LoginCheck.checkRememberMeToggle();
             LoginCheck.clickLoginBtn();
             LoginCheck.clickThemeBtn();

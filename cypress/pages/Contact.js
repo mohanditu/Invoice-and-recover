@@ -25,20 +25,21 @@ class Contact {
     }
     clickContactType() {
         this.elements.ContactType().click();
+        cy.wait(2000)
     }
     selectContactType() {
-        cy.wait(3000)
+        cy.wait(4000)
         this.elements.contactTypeDropdown().each(($el, index, $list) => {
-            if ($el.text() == "Supplier") {
+            if ($el.text() == "Customer") {
                 cy.wrap($el).click();
             }
         });
     }
     entercontactdetails() {
-        this.elements.companyName().type("Edios Pvt Ltd");
-        this.elements.ContactName().type("Sohan Singh");
-        this.elements.ContactMobileNo().type("7409684233");
-        this.elements.ContactEmail().type("mohan.edios1@yopmail.com");
+        this.elements.companyName().type("Edios Pvt Ltd10");
+        this.elements.ContactName().type("Gourav Jee10");
+        this.elements.ContactMobileNo().type("7409684251");
+        this.elements.ContactEmail().type("gourav.jeena10@yopmail.com");
     }
     enterStreetAddress() {
         this.elements.StreetAddress().type("123");

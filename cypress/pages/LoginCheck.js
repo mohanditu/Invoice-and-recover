@@ -12,9 +12,9 @@ class LoginCheck {
 
         this.elements.ScrollBottom()
     }
-    EnterCredentials() {
-        this.elements.Username().type("testinginvoice@yopmail.com");
-        this.elements.Password().type("22222222");
+    EnterCredentials(username,password) {
+        this.elements.Username().type(username);
+        this.elements.Password().type(password);
 
     }
     checkRememberMeToggle(matchUrlString) {
