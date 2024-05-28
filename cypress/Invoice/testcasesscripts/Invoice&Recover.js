@@ -5,20 +5,27 @@ import Items from "../../pages/Items";
 import Signup from "../../pages/Signup";
 
 describe("Validate Invoice and Recover Appliaction", () => {
-    let webdata;
+    let webdata
+    before(() => {
+  
+      cy.fixture('example.json').then((data) => {
+        webdata = data
+      })
+    })
     context('Invoice & recover Login Scenario', () => {
         beforeEach(() => {
             cy.visit('http://66.133.97.28:8081/login')
         })
 
-        it.skip('Validate Login Functionality', () => {
+        it('Validate Login Functionality', () => {
             cy.viewport(1800, 800)
-            LoginCheck.EnterCredentials();
+            LoginCheck.EnterCredentials(webdata.username,webdata.Password);
             LoginCheck.checkRememberMeToggle();
             LoginCheck.clickLoginBtn();
+            LoginCheck.clickThemeBtn();
             LoginCheck.clickAccCircle();
             LoginCheck.checkLogoutBtn();
-            LoginCheck.clickThemeBtn();
+            
         })
         it.skip('Validate Add New Contact', () => {
             cy.viewport(1700, 800)
