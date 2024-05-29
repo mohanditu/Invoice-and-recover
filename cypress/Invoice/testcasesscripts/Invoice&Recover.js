@@ -39,7 +39,7 @@ describe("Validate Invoice and Recover Appliaction", () => {
             Signup.enterBusinessDetails();
             Signup.checktoastMessage();
         })
-        it.skip('Validate Add New Contact', () => {
+        it('Validate Add New Contact', () => {
             cy.viewport(1700, 800)
             LoginCheck.EnterCredentials(webdata.username, webdata.Password);
             LoginCheck.checkRememberMeToggle();
@@ -60,7 +60,7 @@ describe("Validate Invoice and Recover Appliaction", () => {
             cy.wait(1000)
             Contact.checkContactAdd();
         })
-        it.skip('Valdate Add Category Functionality', () => {
+        it('Valdate Add Category Functionality', () => {
             cy.viewport(1200, 800);
             LoginCheck.EnterCredentials(webdata.username, webdata.Password);
             LoginCheck.checkRememberMeToggle();
@@ -74,7 +74,7 @@ describe("Validate Invoice and Recover Appliaction", () => {
             Category.clickSaveBtn();
             Category.checkCategoryAdd();
         })
-        it.skip('Valdate Add Item Functionality', () => {
+        it('Valdate Add Item Functionality', () => {
             cy.viewport(1200, 800);
             LoginCheck.EnterCredentials(webdata.username, webdata.Password);
             LoginCheck.checkRememberMeToggle();

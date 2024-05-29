@@ -43,9 +43,6 @@ class Items {
     }
     selectMeasurementDropwdown() {
         this.elements.MeasurementDrpdwn().should("be.visible").click();
-        this.elements.MeasurementDrpdwnlist().should("be.visible").click();      
-    }
-    selectGSTDropwdown() {
         this.elements.GST().should("be.visible").click();
         this.elements.GSTList().should("be.visible").click();      
     }

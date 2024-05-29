@@ -48,7 +48,7 @@ class Signup {
     enterSignupDetails() {
         this.elements.FirstName().type("Logitech");
         this.elements.LastName().type("Singh");
-        this.elements.EmailAddress().type("Logitech5@yopmail.com");
+        this.elements.EmailAddress().type("Logitech6@yopmail.com");
         
     }
     selectCountryCode() {
@@ -56,7 +56,7 @@ class Signup {
         cy.wait(1000)
         this.elements.IndiaCode().click();
         cy.wait(1000)
-        this.elements.PhoneNumber().type("8979095690");
+        this.elements.PhoneNumber().type("897909568");
     }
     clickSaveBtn() {
         this.elements.saveBtn().click();
@@ -96,14 +96,12 @@ class Signup {
             if(true){
                 cy.wrap($el).should("be.visible").click();
             }
-
         });
         this.elements.Termsandconcheckbox().check();
         this.elements.SignUpBtn().click();
     }
     checktoastMessage() {
         this.elements.ToastMessage().should("have.text","Saved successfully.");
-    }
-    
+    }    
 }
 module.exports = new Signup()
