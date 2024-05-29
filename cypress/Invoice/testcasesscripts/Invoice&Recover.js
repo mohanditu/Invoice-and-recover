@@ -7,10 +7,10 @@ import Signup from "../../pages/Signup";
 describe("Validate Invoice and Recover Appliaction", () => {
     let webdata
     before(() => {
-  
-      cy.fixture('example.json').then((data) => {
-        webdata = data
-      })
+
+        cy.fixture('example.json').then((data) => {
+            webdata = data
+        })
     })
     context('Invoice & recover Login Scenario', () => {
         beforeEach(() => {
@@ -19,17 +19,29 @@ describe("Validate Invoice and Recover Appliaction", () => {
 
         it.skip('Validate Login Functionality', () => {
             cy.viewport(1800, 800)
-            LoginCheck.EnterCredentials(webdata.username,webdata.Password);
+            LoginCheck.EnterCredentials(webdata.username, webdata.Password);
             LoginCheck.checkRememberMeToggle();
             LoginCheck.clickLoginBtn();
             LoginCheck.clickThemeBtn();
             LoginCheck.clickAccCircle();
             LoginCheck.checkLogoutBtn();
-            
+
         })
-        it('Validate Add New Contact', () => {
+        it.skip('Valdate Signup Functionality', () => {
+            cy.viewport(1300, 800);
+            Signup.clickSignuplink();
+            Signup.enterSignupDetails();
+            Signup.selectCountryCode();
+            Signup.clickSaveBtn();
+            cy.wait(2000)
+            Signup.entergriddetails();
+            Signup.enterPasswordDetails();
+            Signup.enterBusinessDetails();
+            Signup.checktoastMessage();
+        })
+        it.skip('Validate Add New Contact', () => {
             cy.viewport(1700, 800)
-            LoginCheck.EnterCredentials(webdata.username,webdata.Password);
+            LoginCheck.EnterCredentials(webdata.username, webdata.Password);
             LoginCheck.checkRememberMeToggle();
             LoginCheck.clickLoginBtn();
             LoginCheck.clickThemeBtn();
@@ -50,7 +62,7 @@ describe("Validate Invoice and Recover Appliaction", () => {
         })
         it.skip('Valdate Add Category Functionality', () => {
             cy.viewport(1200, 800);
-            LoginCheck.EnterCredentials(webdata.username,webdata.Password);
+            LoginCheck.EnterCredentials(webdata.username, webdata.Password);
             LoginCheck.checkRememberMeToggle();
             LoginCheck.clickLoginBtn();
             LoginCheck.clickThemeBtn();
@@ -64,7 +76,7 @@ describe("Validate Invoice and Recover Appliaction", () => {
         })
         it.skip('Valdate Add Item Functionality', () => {
             cy.viewport(1200, 800);
-            LoginCheck.EnterCredentials(webdata.username,webdata.Password);
+            LoginCheck.EnterCredentials(webdata.username, webdata.Password);
             LoginCheck.checkRememberMeToggle();
             LoginCheck.clickLoginBtn();
             LoginCheck.clickThemeBtn();
@@ -73,29 +85,14 @@ describe("Validate Invoice and Recover Appliaction", () => {
             Items.clickAddNewBtn();
             cy.wait(3000)
             Items.selectCategoryDropwdown();
-            Items.enterDetails();            
+            Items.enterDetails();
             cy.wait(3000);
-            Items.selectMeasurementDropwdown();   
-            cy.wait(3000); 
+            Items.selectMeasurementDropwdown();
+            cy.wait(3000);
             Items.selectGSTDropwdown();
             cy.wait(2000)
-            Items.clickSaveBtn();   
-            Items.checkItemAdd();     
-            
-        })
-        it.skip('Valdate Signup Functionality', () => {
-            cy.viewport(1300, 800);
-            Signup.clickSignuplink();
-            Signup.enterSignupDetails();
-            Signup.selectCountryCode();
-            Signup.clickSaveBtn();
-            cy.wait(2000)
-            Signup.entergriddetails();
-            Signup.enterPasswordDetails();
-            Signup.enterBusinessDetails();
-            Signup.checktoastMessage();
+            Items.clickSaveBtn();
+            Items.checkItemAdd();
         })
     })
-
 });
-
